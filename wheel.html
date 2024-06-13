@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Wheel of Fortune Game - Petros</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link rel="icon" type="image/png" href="img/pfp.PNG" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .form-floating input,
+        .form-floating textarea {
+            color: #000000; /* Change this color to your desired font color */
+        }
+
+        .form-floating label {
+            color: #000000; /* Change this color to your desired label color */
+        }
+
+        /* Scroll Indicator */
+        .progress-indicator {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background: transparent;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            transition: background 0.3s, box-shadow 0.3s;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-indicator:hover {
+            background: #e0e0e0;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #progress-arrow {
+            color: white;
+            transition: color 0.3s;
+            font-size: 2em; /* Makes the arrow larger */
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Black outline */
+        }
+
+        .mb-5 {
+            margin-bottom: 3rem !important;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem !important;
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>New York, USA</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <!-- LinkedIn Icon with Text -->
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <a href="https://www.linkedin.com/in/petros-sklavounos-b2b726231/?trk=public_profile_browsemap" target="_blank" class="text-decoration-none">
+                        <small class="fab fa-linkedin text-primary me-2"></small>
+                        <small>LinkedIn</small>
+                    </a>
+                </div>
+                <!-- Email -->
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-envelope text-primary me-2"></small>
+                    <small><a href="mailto:petros.sklavounos@cooper.edu" class="email-link">petros.sklavounos@cooper.edu</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/circle.png" alt="Logo" style="height: 24px; width: auto; margin-right: 10px;">
+            <h2 class="m-0 text-primary"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link ">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Me</a>
+                <div class="nav-item dropdown">
+                    <a href="project.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="project.html" class="dropdown-item">All Projects</a>
+                        <a href="project.html?filter=coding" class="dropdown-item">Coding</a>
+                        <a href="project.html?filter=cfd" class="dropdown-item">Computational Fluid Dynamics</a>
+                        <a href="project.html?filter=engineering-experimentation" class="dropdown-item">Engineering Experimentation</a>
+                        <a href="project.html?filter=fea" class="dropdown-item">Finite Element Analysis</a>
+                        <a href="project.html?filter=heat-transfer" class="dropdown-item">Heat Transfer</a>
+                        <a href="project.html?filter=literary-research" class="dropdown-item">Literary Research</a>
+                        <a href="project.html?filter=machine-learning" class="dropdown-item">Machine Learning</a>
+                        <a href="project.html?filter=manufacturing" class="dropdown-item">Manufacturing</a>
+                        <a href="project.html?filter=mechanical-design" class="dropdown-item">Mechanical Design</a>
+                        <a href="project.html?filter=product-design-development" class="dropdown-item">Product Design/Development</a>
+                        <a href="project.html?filter=renewable-energy" class="dropdown-item">Renewable Energy</a>
+                    </div>
+                </div>
+                <a href="hobbies.html" class="nav-item nav-link">Hobbies</a>
+                <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                <a href="resume.html" class="nav-item nav-link">Resume</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Contact Me<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Main Section Start -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-12 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">Coding Project: Wheel of Fortune Game</h1>
+                            <span class="date">December 5, 2020</span>
+                        </div>
+                        <div class="content-section">
+                            <div class="mb-5">
+                                <h2 class="mb-3">Project Requirements</h2>
+                                <ul>
+                                    <li>Allow a user to enter their own puzzle</li>
+                                    <li>Have a used letter board</li>
+                                    <li>Have a wheel that provides a random dollar amount from $500 to $5000.</li>
+                                    <li>Allow 3 players to play and take turns</li>
+                                    <li>Keep track of the 3 players' scores</li>
+                                    <li>Player 1 will start the game. He/she will spin the wheel.</li>
+                                    <li>Player 1 will call a letter and if there is a letter, fill in the blanks, add the letter in the used letter board, and give player 1 the money they landed on times the number of letters in the game. If the letter is not in puzzle, the next player will play.</li>
+                                    <li>For simplicity, all letters can earn money (unlike in the real show, where a vowel costs $250).</li>
+                                    <li>Write an AI (computer player) that plays relatively intelligently.</li>
+                                    <li>Include a bankrupt space and a lose a turn space on the wheel.</li>
+                                    <li>Allow a user to solve the puzzle at any time.</li>
+                                    <li>Allow a user to buy a vowel for $250 and restrict a user from calling a vowel if he/she decided to spin the wheel.</li>
+                                </ul>
+                            </div>
+                            <div class="mb-5">
+                                <h2 class="mb-3">Sample of Run</h2>
+                                <pre><code>
+****** Welcome to Wheel of Fortune! ******
+****************************************** 
+
+player 1
+player 2
+player 3
+
+>>Player 1, choose the puzzle. The genres for today are:  ('Sports', 'Music', 'Characters')
+
+>>What genre puzzle would you like?
+Music
+>>You've used the following letters:
+ []
+>>So far, the word is:
+ ---------
+Player 1 move
+
+
+>>Scoreboard so far is: 
+player #1:$ 0 
+player #2:$ 0 
+player #3:$ 0
+player1 spins...
+5000!
+Player 1 move
+>>Would you like to guess the entire word(W) or letter(L)?
+L
+>>Enter your letter. Remember, a vowel costs $250: s
+
+Yes! S is in the word!
+>>You've used the following letters:
+ ['S']
+>>So far, the word is:
+ --------S
+Player 2 move
+
+
+>>Scoreboard so far is: 
+player #1:$ 5000 
+player #2:$ 0 
+player #3:$ 0
+player2 spins...
+4500!
+Player 2 move
+>>Would you like to guess the entire word(W) or letter(L)?
+l
+>>Enter your letter. Remember, a vowel costs $250: o
+You need money to guess a vowel. Guess a letter instead.
+Enter your guess: n
+
+Sorry, N isn't in the word.
+>>You've used the following letters:
+ ['S', 'N']
+>>So far, the word is:
+ --------S
+Player 3 move
+
+
+>>Scoreboard so far is: 
+player #1:$ 5000 
+player #2:$ 0 
+player #3:$ 0
+player3 spins...
+900!
+Player 3 move
+>>Would you like to guess the entire word(W) or letter(L)?
+l
+>>Enter your letter. Remember, a vowel costs $250: w
+
+Sorry, W isn't in the word.
+>>You've used the following letters:
+ ['S', 'N', 'W']
+>>So far, the word is:
+ --------S
+Player 1 move
+
+
+>>Scoreboard so far is: 
+player #1:$ 5000 
+player #2:$ 0 
+player #3:$ 0
+player1 spins...
+650!
+Player 1 move
+>>Would you like to guess the entire word(W) or letter(L)?
+w
+>>Have a go at it then
+FIREFLies
+
+Calculating....
+YAY!You got the word
+
+You guessed it! Congratulations you won
+
+The word was FIREFLIES
+
+Your cash prize is: $ 5900
+</code></pre>
+                            </div>
+                            <div class="mb-5">
+                                <h2 class="mb-3">Explanation of What Was Done</h2>
+                                <p>Python IDLE was used to make the game. Executing python files is simple. The file was then committed to the classroom's GitHub organization and into our personal repositories. Below is a screenshot outlining the bankrupt space, skip a turn, and the conditional statements for the winning player.</p>
+                            </div>
+                            <div class="mb-5">
+                                <span class="image fit"><img src="img/wof.PNG" alt="Wheel of Fortune Screenshot" /></span>
+                                <p>Feel free to reach out for these files if you would like to run them firsthand.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s" style="margin-top: 5rem; padding-top: 5rem;">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Address</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>New York, USA</p>
+                    <p><a href="tel:+16464277255" class="phone-number-link"><i class="fa fa-phone-alt me-3"></i>+6464277255</a></p>
+                    <p><a href="mailto:petros.sklavounos@cooper.edu" class="email-link"><i class="fa fa-envelope me-3"></i><small>petros.sklavounos@cooper.edu</small></a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/peter7542/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/petros-sklavounos-b2b726231/?trk=public_profile_browsemap"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <h5 class="text-white mb-4">Contact Me</h5>
+                    <form action="https://formspree.io/f/xzbnapeq" method="POST">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" placeholder="Leave a message here" name="message" style="height: 150px" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary py-3 w-100">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="text-white" href="#">PetrosSklavounos</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a class="text-white" href="https://htmlcodex.com">HTML Codex</a> and Petros Sklavounos
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var docHeight = document.body.offsetHeight;
+            var windowHeight = window.innerHeight;
+            var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            var scrollPercent = scrollPosition / (docHeight - windowHeight);
+            var scrollPercentRounded = Math.round(scrollPercent * 100);
+
+            // Update the background of the progress indicator
+            var progressIndicator = document.getElementById('progress-indicator');
+            progressIndicator.style.background = 'linear-gradient(to top, #ab7b4c ' + scrollPercentRounded + '%, transparent ' + scrollPercentRounded + '%)';
+        });
+
+        // Smooth scroll to top
+        document.getElementById('progress-indicator').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <a href="#" class="progress-indicator" id="progress-indicator" title="Scroll to top">
+        <span id="progress-arrow">&#x2191;</span>
+    </a>
+</body>
+
+</html>

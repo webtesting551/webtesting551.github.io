@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Petros Sklavounos Portfolio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link rel="icon" type="image/png" href="img/pfp.PNG" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .progress-indicator {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background: transparent;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            transition: background 0.3s, box-shadow 0.3s;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-indicator:hover {
+            background: #e0e0e0;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #progress-arrow {
+            color: white;
+            transition: color 0.3s;
+            font-size: 2em;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        .project-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #A3764A;
+            margin-bottom: 10px;
+        }
+
+        .project-date {
+            font-size: 13px;
+            font-weight: normal;
+            font-family: 'Times New Roman', serif;
+            color: #666;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .project-description {
+            font-size: 16px;
+            font-weight: normal;
+            font-family: 'Times New Roman', serif;
+            color: #666;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .content {
+            background: #fff;
+            border: 5px solid #f4f4f9;
+            border-top: none;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 800px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .form-floating input,
+        .form-floating textarea {
+            color: #000000;
+        }
+
+        .form-floating label {
+            color: #000000;
+        }
+
+        .portfolio-item img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .portfolio-item .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item .btn-square {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>New York, USA</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <!-- LinkedIn Icon with Text -->
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <a href="https://www.linkedin.com/in/petros-sklavounos-b2b726231/?trk=public_profile_browsemap" target="_blank" class="text-decoration-none">
+                        <small class="fab fa-linkedin text-primary me-2"></small>
+                        <small>LinkedIn</small>
+                    </a>
+                </div>
+                <!-- Email -->
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-envelope text-primary me-2"></small>
+                    <small><a href="mailto:petros.sklavounos@cooper.edu" class="email-link">petros.sklavounos@cooper.edu</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/circle.png" alt="Logo" style="height: 24px; width: auto; margin-right: 10px;">
+            <h2 class="m-0 text-primary"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About Me</a>
+
+                <div class="nav-item dropdown">
+                    <a href="project.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Projects</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="project.html" class="dropdown-item">All Projects</a>
+                        <a href="project.html?filter=coding" class="dropdown-item">Coding</a>
+                        <a href="project.html?filter=cfd" class="dropdown-item">Computational Fluid Dynamics</a>
+                        <a href="project.html?filter=engineering-experimentation" class="dropdown-item">Engineering Experimentation</a>
+                        <a href="project.html?filter=fea" class="dropdown-item">Finite Element Analysis</a>
+                        <a href="project.html?filter=heat-transfer" class="dropdown-item">Heat Transfer</a>
+                        <a href="project.html?filter=literary-research" class="dropdown-item">Literary Research</a>
+                        <a href="project.html?filter=machine-learning" class="dropdown-item">Machine Learning</a>
+                        <a href="project.html?filter=manufacturing" class="dropdown-item">Manufacturing</a>
+                        <a href="project.html?filter=mechanical-design" class="dropdown-item">Mechanical Design</a>
+                        <a href="project.html?filter=product-design-development" class="dropdown-item">Product Design/Development</a>
+                        <a href="project.html?filter=renewable-energy" class="dropdown-item">Renewable Energy</a>
+                    </div>
+                </div>
+                <a href="hobbies.html" class="nav-item nav-link">Hobbies</a>
+                <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                <a href="resume.html" class="nav-item nav-link">Resume</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Contact Me<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Project</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Project</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Projects Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1 class="display-5 mb-5">Projects</h1>
+                <h3 class="mb-4">Categories</h3>
+            </div>
+            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-12 text-center">
+                    <ul class="list-inline mb-5" id="portfolio-flters">
+                        <li class="mx-2" data-filter="*">All Projects</li>
+                        <li class="mx-2" data-filter=".coding">Coding</li>
+                        <li class="mx-2" data-filter=".cfd">Computational Fluid Dynamics</li>
+                        <li class="mx-2" data-filter=".engineering-experimentation">Engineering Experimentation</li>
+                        <li class="mx-2" data-filter=".fea">Finite Element Analysis</li>
+                        <li class="mx-2" data-filter=".heat-transfer">Heat Transfer</li>
+                        <li class="mx-2" data-filter=".literary-research">Literary Research</li>
+                        <li class="mx-2" data-filter=".machine-learning">Machine Learning</li>
+                        <li class="mx-2" data-filter=".manufacturing">Manufacturing</li>
+                        <li class="mx-2" data-filter=".mechanical-design">Mechanical Design</li>
+                        <li class="mx-2" data-filter=".product-design-development">Product Design/Development</li>
+                        <li class="mx-2" data-filter=".renewable-energy">Renewable Energy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row g-4 portfolio-container">
+                <!-- Project Item -->
+             <div class="col-lg-4 col-md-6 portfolio-item all-projects coding cfd engineering-experimentation renewable-energy wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <a href="buildings.html">
+                <img class="img-fluid" src="img/buildingpfp.png" alt="">
+            </a>
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/buildingpfp.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="buildings.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">18 December, 2023</p>
+            <a href="buildings.html">
+                <h1 class="project-header">Optimizing CO2 Sensor Placement in 41 Cooper Classrooms Via CFD and Sensor Data Analytics</h1>
+            </a>
+            <p class="project-description">This project focuses on optimizing CO2 sensor placement in Room 506 of 41 Cooper Square to maintain indoor air quality, crucial for student health and cognitive function. The study uses Computational Fluid Dynamics (CFD) simulations, complemented by empirical data from HOBO MX sensors and a Particles Plus 8302 Particle Counter.</p>
+        </div>
+    </div>
+</div>
+
+                <!-- Project Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects manufacturing mechanical-design wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/plasticpfp.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/plasticpfp.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="plastic.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">28 November, 2023</p>
+                            <h1 class="project-header">Plastic Injection Molding Nozzle Part</h1>
+                            <p class="project-description">A nozzle part device was made for friction welding. The design process included the creation of a detailed CAD model, which was then split to define the welding interfaces. An injection mold cavity was designed for manufacturing the device parts, with a SolidWorks simulation conducted to validate the flow of plastic and ensure ease of injection at the identified sites.</p>
+                        </div>
+                    </div>
+                </div> 
+                <!-- Project Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects manufacturing mechanical-design wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/ringpfp.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/ringpfp.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="ring.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">20 October, 2023</p>
+                            <h1 class="project-header">Metal Ring Casting</h1>
+                            <p class="project-description">A metal ring was designed using CAD software, followed by 3D printing in wax for investment casting. Rings are assembled into a tree structure for effective metal flow. The process includes a SolidWorks simulation to optimize the injection molding site and assess casting success. Post-casting, rings are refined through sanding and polishing, with a final comparison of the ring's mass against the predicted model. Assessment focuses on design, casting quality, and measurement precision. Materials include 3D printers, wax, metal, and casting tools.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects manufacturing mechanical-design wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/cookiepfp.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/cookiepfp.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="cookie.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">16 October, 2023</p>
+                            <h1 class="project-header">Cookie Cutter Manufacturing</h1>
+                            <p class="project-description">A cookie cutter design was chosen and then adapted to be used for a cookie cutter. Its adaptation was to minimize springback experienced by the aluminium sheet when released from its compressive loads. CAD was used to position the dies normal to the mold for even pressure distribution. The initial PLA prototype served to characterize the loads experienced, thus informing the design of the upgraded CNC machiined parts. The final product achieved the client's specified tolerance, maintaining less than 1/8 inch deviation in any dimension.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Item -->
+                
+                <!-- Project Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects coding renewable-energy wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/chillerpfp.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/chillerpfp.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="chiller.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">24 July, 2023</p>
+                            <h1 class="project-header">Energy Efficiency Optimization of Chiller Unit Consumption</h1>
+                            <p class="project-description">A Python Script for interfacing with excel data to track and optimize chiller unit operations. It sorts energy usage data into build and burn cycles, identifies active periods using pandas, and quantifies total power of each device (cooling towers, air handling units) within each cycle. This allows for concise documentation when optimizing efficiency of runs in terms of time and electric grid usage.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects coding wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/sudokupfp.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/sudokupfp.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="sudoku.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">28 June, 2023</p>
+                            <h1 class="project-header">Automated Sudoku Solver Using OCR and Backtracking Algorithm</h1>
+                            <p class="project-description">A Sudoku Solver that uses a Python-based automated system to solve Sudoku puzzles from images. The solution utilizes OpenCV for image preprocessing, noise removal, and line extraction, followed by Tesseract OCR for character recognition. Finally, NumPy handles grid data operations, PIL manipulates image data, and Matplotlib visualizes the results.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects coding machine-learning renewable-energy wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/elevatorpfp.JPG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/elevatorpfp.JPG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="elevator.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">24 June, 2023</p>
+                            <h1 class="project-header">Predictive Maintenance of Elevator Systems Using Machine Learning</h1>
+                            <p class="project-description">This project leverages machine learning algorithms to predict abnormal vibrations in an elevator system, aiming to optimize maintenance schedules and ensure smooth operation. By analyzing sensor data from an elevator in Brazil, the project applies Linear Regression, Random Forest, and Gradient Boosting models, achieving high accuracy in identifying potential system anomalies. It demonstrates the power of predictive analytics in improving the efficiency and safety of critical infrastructure systems.</p>
+                        </div>
+                    </div>
+                </div>
+              
+               <div class="col-lg-4 col-md-6 portfolio-item all-projects coding machine-learning wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/spampfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/spampfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="spam.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">21 June, 2023</p>
+                            <h1 class="project-header">Spam Detection Using Machine Learning MNB Classcompresifier</h1>
+                            <p class="project-description">This project develops a precise spam detection model. It reads CSV data for training, conducts advanced text preprocessing, and employs a Multinomial Naive Bayes classifier along with TF-IDF vectorization for efficient and accurate email categorization.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects coding machine-learning wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/mlintropfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/mlintropfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="mlintro.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">20 June, 2023</p>
+                            <h1 class="project-header">Forecasting Barometric Pressure in NYC Using Machine Learning</h1>
+                            <p class="project-description">A Comparative Analysis of ARIMA, LSTM, and Gradient Boosting Algorithms.Utilizing historical data, this project forecasts NYC's barometric pressure employing ARIMA, LSTM, and Gradient Boosting models. Scikit-learn and Pandas handle data processing and model training. A comparative analysis assesses model performance with actual vs. predicted values and future forecasts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newly Added Projects -->
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects engineering-experimentation mechanical-design wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/vibrationpfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/vibrationpfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="vibration.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">May 11, 2023</p>
+                            <h1 class="project-header">Modeling Cooper Hyperloop's Horizontal Stability</h1>
+                            <p class="project-description">Designed a scaled testing rig to analyze and optimize the stability system of a Hyperloop pod by simulating an uneven track for design optimization.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects manufacturing mechanical-design wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/tunnelpfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/tunnelpfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="tunnel.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">May 10, 2023</p>
+                            <h1 class="project-header">Air Tunnel Project</h1>
+                            <p class="project-description">Manufactured a to-scale air tunnel testing section using 3D CAD, laser cutting, and machining to create an airtight replica of the LL210 Air Tunnel's testing section.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects heat-transfer coding wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/rodpfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/rodpfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="rod.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">May 9, 2023</p>
+                            <h1 class="project-header">Heat Transfer Project</h1>
+                            <p class="project-description">Performed comprehensive analysis on heat transfer in rods of diverse cross-sections, optimizing for the highest heat transfer rate under varying cooling conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects cfd engineering-experimentation wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/bottlepfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/bottlepfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="m3.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">May 9, 2023</p>
+                            <h1 class="project-header">Effect of Temperature on Flame Velocity and Thrust of an Isopropyl Rocket</h1>
+                            <p class="project-description">Explored temperature effects on flame velocity and thrust with a sous-vide, implemented a seesaw mechanism, and analyzed the influence of nozzle diameter.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects cfd fea engineering-experimentation thermal wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/compressorpfp.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/compressorpfp.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="compressor.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">May 1, 2023</p>
+                            <h1 class="project-header">Compressor Stage Design for Turbojet Engine</h1>
+                            <p class="project-description">Designed and optimized a compressor stage for a gas turbofan engine using Altair HyperMesh and ANSYS Fluent, applying the k-epsilon turbulence model and manual tuning of relaxation factors.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects cfd fea engineering-experimentation thermal wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/hxgpfp.JPG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/hxgpfp.JPG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="hxg.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">April 3, 2023</p>
+                            <h1 class="project-header">Heat Exchanger Design for Oil Cooling</h1>
+                            <p class="project-description">Designed a compact heat exchanger to cool hot motor oil in a Gasoline IC engine using manual calculations, material analysis, and CFD simulations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects fea engineering-experimentation wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/beampfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/beampfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="m1.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">March 28, 2023</p>
+                            <h1 class="project-header">Measuring the Young’s Modulus of a Vibrating Beam</h1>
+                            <p class="project-description">Proposed a non-destructive approach to determine the Young's modulus of unknown beam materials by measuring the natural frequency of a vibrating cantilever beam.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Item -->
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects fea engineering-experimentation heat-transfer mechanical-design wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/Beam profile picture.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/Beam profile picture.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="Rectangular.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">December 16, 2022</p>
+                            <h1 class="project-header">Rectangular plate stress, deflection, and twist analysis project</h1>
+                            <p class="project-description">A compiled summary of the final shelf design parameters and measurements, for the shelf to carry 200 lb, have a maximum deflection of 1/2" relative to the corners, and a minimum factor of safety of 3. The software used was LaTex, OnShape, Ansys APDL, and MatLab.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects cfd fea heat-transfer wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/Turducken pfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/Turducken pfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="Turducken.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">December 4, 2022</p>
+                            <h1 class="project-header">Cooking and Transient Thermal Analysis using Altair Hypermesh and Ansys Workbench</h1>
+                            <p class="project-description">A turducken is to be cooked with the addition of electric resistance skewers which may be placed through the turkey. The design of the skewers and the temperature of the oven will be designed to optimize for the fastest cook time, with the least amount of turducken burnt.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects cfd fea engineering-experimentation heat-transfer mechanical-design product-design-development renewable-energy wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/tower pfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/tower pfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="Windturbine.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">November 7, 2022</p>
+                            <h1 class="project-header">Design and Analysis of a Wind Turbine with FEA ANSYS software</h1>
+                            <p class="project-description">A wind turbine has been designed for the client’s specifications. Design is optimized to reduce the cross-sectional area and weight by using ANSYS FEA. Also, it is to withstand the extreme weather conditions of the high wind speeds and temperature fluctuations. For safe operation, the tower is to not match the natural frequency operating range if a blade detaches.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects mechanical-design wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/Caetablepfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/Caetablepfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="Caetable.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">October 6, 2022</p>
+                            <h1 class="project-header">Executive Stone Desk Design-Computer Aided Engineering Analysis</h1>
+                            <p class="project-description">Dimensions and materials of stone topped desk was designed to withstand a specified load using ANSYS APDL. The deformation and stresses experienced by each component was ensured to not fail under the load and to meet the design objectives.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects renewable-energy wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/Water turbine pfp.png" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/Water turbine pfp.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="Waterturbine.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">August 29, 2022</p>
+                            <h1 class="project-header">Renewable Energy Project- Water Turbine Rapid Prototyping</h1>
+                            <p class="project-description">Within six weeks, each team was to present a finished product that uses a natural element to generate enough voltage for charging mobile devices (5V) with the design constraint of the contraption fitting within a set cylinder size for portable use by campers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects engineering-experimentation fea mechanical-design renewable-energy wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/mechmatpfp.PNG" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/mechmatpfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="Mechmat.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">May 14, 2022</p>
+                            <h1 class="project-header">Mechanics of Materials- Frame Design for the Cooper Hyperloop team</h1>
+                            <p class="project-description">The frame designed has the objective of providing a stable structure that brings all the components of the hyperloop pod together. Our frame will be designed to withstand the loads and interferences between other sub-components of the pod, whilst also making it as light as possible, and simple to manufacture. To achieve this, various primary analysis techniques and research was conducted by comparing cross-sections with both hand calculations and FEA simulations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects engineering-experimentation manufacturing mechanical-design renewable-energy wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/cartpfp.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/cartpfp.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="cart.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">May 7, 2022</p>
+                            <h1 class="project-header">Rapid Prototyping Ramp Car Design Project</h1>
+                            <p class="project-description">We designed and built a custom car to travel along Hotwheels tracks down the NAB's staircase, activate a catapult, and launch a ball as far as possible. The car incorporated sheet metal, was made from an aluminium block, and met specific weight and wheel design parameters.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 portfolio-item all-projects literary-research wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="rounded overflow-hidden d-flex flex-column h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="img/freudpfp.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-square btn-outline-light mx-1" href="img/freudpfp.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                                <a class="btn btn-square btn-outline-light mx-1" href="freud.html"><i class="fa fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="content flex-grow-1">
+                            <p class="project-date">May 15, 2022</p>
+                            <h1 class="project-header">Research Project: Freud's Gender Bias in 'Hysteria'</h1>
+                            <p class="project-description">A study in how Freud treated his patients according to their conforming genders, that lead to him diagnosing primarily women as hysteric, as opposed to applying a non-gender specific theory and treating them as individuals.</p>
+                        </div>
+                    </div>
+                </div>
+               <!-- Project Item -->
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects engineering-experimentation mechanical-design wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/gear pfp.PNG" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/gear pfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="gears.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">December 15, 2021</p>
+            <h1 class="project-header">Modeling spin 1/2 down of electrons</h1>
+            <p class="project-description">An analysis of the kinematics and kinetics of a system of rigid bodies in a real-world system application. We chose to analyze an existing model that demonstrates the motion of an electron using gears.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects product-design-development wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/robotpfp.PNG" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/robotpfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="robot.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">May 5, 2021</p>
+            <h1 class="project-header">Product Development:"The Litter Robots"</h1>
+            <p class="project-description">"Shark Tank" Product: Litter Robots. From problem-solving pitch to refined business model, this team project navigated feasibility, viability, and desirability, using interviews, tests, and iterative development for comprehensive validation.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects literary-research wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/lockepfp.png" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/lockepfp.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="locke.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">April 25, 2021</p>
+            <h1 class="project-header">Research Project:Locke's state of nature in the <em>Second Treatise of Government</em></h1>
+            <p class="project-description">A claim that the assumptions on which Locke bases the state of nature when arguing about equality and justice reduce the legitiamcy, and instead create an unrealistic depiction, of the state of nature.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects literary-research wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/machpfp.jpg" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/machpfp.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="mach.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">March 27, 2021</p>
+            <h1 class="project-header">Research Project: Machiavelli's sinister objective for prospective princes</h1>
+            <p class="project-description">An exploration in the belief that Machiavelli's <em>The Prince</em> was written with the sinister objective of leading new and prospective princes to their downfall by embedding flawed advice.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects literary-research wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/morepfp.jpg" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/morepfp.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="more.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">March 12, 2021</p>
+            <h1 class="project-header">Research Project:Unearthing Crime &amp; Punishment in Thomas More’s Ideal Commonwealth</h1>
+            <p class="project-description">Specific instances of character exchanges will be used to identify the author's position on the components of crime and punishment in an ideal commonwealth and support that it can be achieved through legal reform.</p>
+        </div>
+    </div>
+</div>
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects coding wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/adventurepfp.PNG" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/adventurepfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="python.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">December 6, 2020</p>
+            <h1 class="project-header">Coding Project: Text-based Adventure</h1>
+            <p class="project-description">Using Python and everything learnt from C and C++. A text-based game is made using conditional statements, switch statements, loops, functions, arrays, pointers, functions with pointer arguments, command line arguments, structures, and pointers to structures.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects coding wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/wheelpfp.jpg" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/wheelpfp.jpg" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="wheel.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">December 5, 2020</p>
+            <h1 class="project-header">Coding Project: Wheel of Fortune game</h1>
+            <p class="project-description">A 3-player wheel of fortune game made with Python that allows the user to enter their own puzzle.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects coding wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/sospfp.png" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/sospfp.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="sos.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">October 21, 2020</p>
+            <h1 class="project-header">Coding Project: SOS game</h1>
+            <p class="project-description">An SOS game made with C and Makefile languages, that is playable by 2 players, with a custom size board chosen at the beginning of the game.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects mechanical-design wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/wheeldesignpfp.png" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/wheeldesignpfp.png" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="wheeldesign.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">November 24, 2020</p>
+            <h1 class="project-header">Advanced Sports Wheel Design in Solidworks</h1>
+            <p class="project-description">An advanced model of a sport's car wheel designed in Solidworks, complete with attention to detail like designed lug nuts that are showcased in the exploded view and animation.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Project Item -->
+<div class="col-lg-4 col-md-6 portfolio-item all-projects mechanical-design wow fadeInUp" data-wow-delay="0.1s">
+    <div class="rounded overflow-hidden d-flex flex-column h-100">
+        <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/legopfp.PNG" alt="">
+            <div class="portfolio-overlay">
+                <a class="btn btn-square btn-outline-light mx-1" href="img/legopfp.PNG" data-lightbox="portfolio"><i class="fa fa-search-plus"></i></a>
+                <a class="btn btn-square btn-outline-light mx-1" href="lego.html"><i class="fa fa-link"></i></a>
+            </div>
+        </div>
+        <div class="content flex-grow-1">
+            <p class="project-date">November 5, 2020</p>
+            <h1 class="project-header">Design Project: Lego Solidworks</h1>
+            <p class="project-description">Modelling complex 3D parts in Solidworks to gain experience in views, engineering drawings, and assemblies.</p>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Projects End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s" style="margin-top: 5rem; padding-top: 5rem;">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Address</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>New York, USA</p>
+                    <p><a href="tel:+16464277255" class="phone-number-link"><i class="fa fa-phone-alt me-3"></i>+6464277255</a></p>
+                    <p><a href="mailto:petros.sklavounos@cooper.edu" class="email-link"><i class="fa fa-envelope me-3"></i><small>petros.sklavounos@cooper.edu</small></a></p>
+
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/peter7542/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>                 
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/petros-sklavounos-b2b726231/?trk=public_profile_browsemap"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6">
+                    <h5 class="text-white mb-4">Contact Me</h5>
+                    <form action="https://formspree.io/f/xzbnapeq" method="POST">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" placeholder="Leave a message here" name="message" style="height: 150px" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary py-3 w-100">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="text-white" href="#">PetrosSklavounos</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a class="text-white" href="https://htmlcodex.com">HTML Codex</a> and Petros Sklavounos
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Preload images
+            function preloadImages(selector) {
+                $(selector).each(function() {
+                    $('<img/>')[0].src = $(this).attr('src');
+                });
+            }
+
+            preloadImages('.portfolio-item img');
+
+            // Initialize Isotope
+            var $grid = $('.portfolio-container').isotope({
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+            });
+
+            // On filter button click
+            $('#portfolio-flters li').on('click', function() {
+                var filterValue = $(this).attr('data-filter');
+                // Use Isotope to filter items
+                $grid.isotope({ filter: filterValue });
+
+                // Update active class on buttons
+                $('#portfolio-flters li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Apply initial filter from URL parameter
+            const params = new URLSearchParams(window.location.search);
+            const initialFilter = params.get('filter') ? '.' + params.get('filter') : '*';
+            $grid.isotope({ filter: initialFilter });
+            $('#portfolio-flters li[data-filter="' + initialFilter + '"]').addClass('active');
+        });
+
+        window.addEventListener('scroll', function () {
+            var docHeight = document.body.offsetHeight;
+            var windowHeight = window.innerHeight;
+            var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            var scrollPercent = scrollPosition / (docHeight - windowHeight);
+            var scrollPercentRounded = Math.round(scrollPercent * 100);
+
+            // Update the background of the progress indicator
+            var progressIndicator = document.getElementById('progress-indicator');
+            progressIndicator.style.background = 'linear-gradient(to top, #ab7b4c ' + scrollPercentRounded + '%, transparent ' + scrollPercentRounded + '%)';
+        });
+
+        // Smooth scroll to top
+        document.getElementById('progress-indicator').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <a href="#" class="progress-indicator" id="progress-indicator" title="Scroll to top">
+        <span id="progress-arrow">&#x2191;</span>
+    </a>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+    </script>
+</body>
+
+</html>

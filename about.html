@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Petros Sklavounos Portfolio</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link rel="icon" type="image/png" href="img/pfp.PNG" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .progress-indicator {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background: transparent;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            transition: background 0.3s, box-shadow 0.3s;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-indicator:hover {
+            background: #e0e0e0;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #progress-arrow {
+            color: white;
+            transition: color 0.3s;
+            font-size: 2em;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        
+        /* Add this CSS */
+        .sticky-toc {
+            position: fixed;
+            top: 150px;
+            left: 0;
+            max-width: 150px;
+            height: 100%;
+            z-index: 10;
+            background-color: transparent;
+            padding: 8px;
+            overflow-y: auto;
+        }
+
+        #toc {
+            list-style: none;
+            padding: 0;
+        }
+
+        #toc li a {
+            display: block;
+            padding: 5px 10px;
+            margin: 5px 0;
+            background-color: rgba(240, 240, 240, 0.4);
+            color: #333;
+            text-decoration: none;
+        }
+
+        #toc li a.active {
+            background-color: rgba(102, 102, 102, 0.4);
+            color: #fff;
+        }
+
+        #toc-container {
+            display: none;
+        }
+
+        .owl-carousel-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            max-height: 400px;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5em;
+            line-height: 1.6;
+        }
+
+        .feature-text p {
+            margin-bottom: 1.5em;
+        }
+
+        .img-fluid {
+            width: 100%;
+            height: auto;
+			max-height: 450px; /* Adjust this value to control the maximum height of the images */
+        }
+
+        .image-gap {
+            margin-bottom: 30px;
+        }
+
+        .custom-size {
+            padding-top: 250px;
+            max-width: 100%;
+            max-height: 160%;
+        }
+		
+		.btn-orange {
+    background-color: #a3764a; /* Adjust this color to match the orange in the picture */
+    color: white;
+    font-size: 1.25rem; /* Adjust font size as needed */
+    border: none;
+    transition: background-color 0.3s;
+
+}
+
+.btn-orange:hover {
+    background-color: #ab7b4c; /* Adjust the hover color as needed */
+    color: #fff; /* Ensure the text color remains white on hover */
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .btn-orange {
+        margin-bottom: 0; /* Remove bottom margin on larger screens */
+    }
+
+    .mb-3 {
+        margin-bottom: 1rem !important; /* Ensure there's space between the columns on larger screens */
+    }
+}
+.form-floating input,
+      .form-floating textarea {
+         color: #000000; /* Change this color to your desired font color */
+      }
+
+      .form-floating label {
+         color: #000000; /* Change this color to your desired label color */
+      }
+    </style>
+</head>
+
+<body>
+    <!-- Add this inside the body, right after the opening <body> tag -->
+    <div id="toc-container" class="sticky-toc">
+        <ul id="toc">
+            <li><a href="#early-beginnings">Junior School</a></li>
+            <li><a href="#big-move">Middle School</a></li>
+            <li><a href="#shaping-moments">High School</a></li>
+            <li><a href="#independence">College</a></li>
+        </ul>
+    </div>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>New York, USA</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <!-- LinkedIn Icon with Text -->
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <a href="https://www.linkedin.com/in/petros-sklavounos-b2b726231/?trk=public_profile_browsemap" target="_blank" class="text-decoration-none">
+                        <small class="fab fa-linkedin text-primary me-2"></small>
+                        <small>LinkedIn</small>
+                    </a>
+                </div>
+                <!-- Email -->
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-envelope text-primary me-2"></small>
+                    <small><a href="mailto:petros.sklavounos@cooper.edu" class="email-link">petros.sklavounos@cooper.edu</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/circle.png" alt="Logo" style="height: 24px; width: auto; margin-right: 10px;">
+            <h2 class="m-0 text-primary"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link ">Home</a>
+                <a href="about.html" class="nav-item nav-link active">About Me</a>
+                <div class="nav-item dropdown">
+                    <a href="project.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="project.html" class="dropdown-item">All Projects</a>
+                        <a href="project.html?filter=coding" class="dropdown-item">Coding</a>
+                        <a href="project.html?filter=cfd" class="dropdown-item">Computational Fluid Dynamics</a>
+                        <a href="project.html?filter=engineering-experimentation" class="dropdown-item">Engineering Experimentation</a>
+                        <a href="project.html?filter=fea" class="dropdown-item">Finite Element Analysis</a>
+                        <a href="project.html?filter=heat-transfer" class="dropdown-item">Heat Transfer</a>
+                        <a href="project.html?filter=literary-research" class="dropdown-item">Literary Research</a>
+                        <a href="project.html?filter=machine-learning" class="dropdown-item">Machine Learning</a>
+                        <a href="project.html?filter=manufacturing" class="dropdown-item">Manufacturing</a>
+                        <a href="project.html?filter=mechanical-design" class="dropdown-item">Mechanical Design</a>
+                        <a href="project.html?filter=product-design-development" class="dropdown-item">Product Design/Development</a>
+                        <a href="project.html?filter=renewable-energy" class="dropdown-item">Renewable Energy</a>
+                    </div>
+                </div>
+                <a href="hobbies.html" class="nav-item nav-link">Hobbies</a>
+                <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+                <a href="resume.html" class="nav-item nav-link">Resume</a>
+            </div>
+            <a href="contact.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Contact Me<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Early Beginnings Section -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="early-beginnings">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">Early Beginnings</h1>
+                        </div>
+                        <div class="content-section">
+                            <p class="mb-4 pb-2">
+                                I grew up in Athens, Greece, spending much of my childhood attending an international school. This meant I was immersed in different cultures and languages from a young age, all while navigating a rigorous academic environment.
+                            </p>
+                            <p class="mb-4 pb-2">
+                                Alongside school, we frequently visited relatives, particularly my grandparents. My grandfather's in-house workshop, which at first glance seemed like a floor-to-ceiling collection of junk, was actually a treasure trove filled with endless opportunities and stories. It was a chaotic paradise where tools, random parts, and miscellaneous hardware were kept “just in case,” teetering on the edge of hoarding. 
+                            </p>
+                            <p class="mb-4 pb-2">
+                                Every visit meant being roped into fixing or improving something – a broken appliance, a squeaky door, or the garden hose that refused to cooperate. These tasks were laborious and endless, but they were also adventures that taught me the magic of how things work that made refurbishing possible.
+                            </p>
+                            <p class="mb-4 pb-2">
+                                My grandfather’s knack for fixing anything and everything rubbed off on me, sparking an early interest in sustainability and the idea of giving objects a second life. A few years later, I inherited his collection of “how things work” books, which served as my unexpected introduction to engineering.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0 d-flex flex-column align-items-center">
+                    <img class="img-fluid image-gap" src="img/workshop.jpg" alt="Workshop">
+                    <img class="img-fluid" src="img/sanding.jpg" alt="Sanding">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Big Move Section -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="big-move">
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0" style="min-height: 300px;">
+                    <div class="position-relative h-100 d-flex flex-column align-items-center justify-content-center">
+                        <img class="img-fluid image-gap my-2" src="img/dressed.jpg" alt="Image 1" style="max-width: 60%; max-height: 70%;">
+                        <img class="img-fluid my-2" src="img/dressedposing.jpg" alt="Image 2" style="max-width: 60%; max-height: 70%;">
+                    </div>
+                </div>
+                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">The Big Move</h1>
+                        </div>
+                        <p class="mb-4 pb-2">Fast-forward to middle school, my mum made a bold move to advance her career by pursuing an MBA at Imperial College. One summer, while we were lounging by the pool in Naxos, a headhunter’s LinkedIn message was to change everything for us: a job opportunity in DUBAI! Within months we were navigating cardboard boxes as we were to move to a new country, leaving behind the only school and friends we had ever known.</p>
+                        <p class="mb-4 pb-2">The move was a whirlwind of emotions and challenges. Adjusting to a new culture, making new friends, and navigating an unfamiliar environment was daunting and definitely took a lot of adjusting to. However, this experience expanded our horizons and brought a newfound sense of maturity. We had to rapidly adapt and embrace the concept of being global citizens by living in a diverse expat community. The concept of home and home country would blur the longer we stayed, and I quickly began to understand the saying that it’s the people who give meaning to home.</p>
+                        <p class="mb-4 pb-2">Through this journey, I learned resilience, adaptability, and the importance of stepping out of my comfort zone to accept change more readily. It reshaped my perspective and strengthened my belief that true growth and flourishing arise from welcoming change and difficult situations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shaping Moments Section -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="shaping-moments">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">Shaping Moments</h1>
+                        </div>
+                        <div class="content-section">
+                            <p class="mb-4 pb-2">
+                                I was constantly pushed to challenge myself and explore new things, with one of the most impactful steps being my decision to tackle my fear of public speaking. I participated in the World Scholars Cup, a worldwide debating tournament, which took me to the Vietnam Global Round and later to Yale University in the United States for the Tournament of Champions. This experience significantly improved my presentation skills, my ability to engage in discussions with important individuals, and my capacity for critical thinking on the spot. The unseen debating competition was particularly helpful, as arguing unexpected controversial topics with a pre-determined stance required quick thinking, adaptability, and the ability to articulate my thoughts clearly under pressure and in front of a crowd.
+                            </p>
+                            <p class="mb-4 pb-2">
+                                Next, I applied for the Duke of Edinburgh Award, a prestigious navigation and leadership challenge. We were dropped off at an unknown location in the far outskirts of Sharjah, UAE, and had to navigate to checkpoints using a map and compass, set up tents, and cover about 57 km in three days. This adventure tested my physical endurance and teamwork skills, reinforcing the importance of preparation and resilience.
+                            </p>
+                            <p class="mb-4 pb-2">
+                                For the voluntary service requirement of this award, I shifted from voluntary library work to something more fulfilling. I became a Junior Sports Coach, helping prepare children with determination for the Special Olympics Abu Dhabi. This experience significantly developed my emotional intelligence. Interacting with these children, whose motivations required empathy and understanding, taught me how to effectively relate to, support, and understand others’ needs, even when they were not explicitly communicated. I focused on ensuring they were having fun and willingly participating in a positive, inclusive, and engaging environment.
+                            </p>
+                            <p class="mb-4 pb-2">
+                                Through these diverse experiences, I developed resilience, patience, gratitude, adaptability, and a deeper understanding of myself and others. These challenges propelled me towards personal growth and prepared me for future endeavors with confidence and empathy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0 d-flex flex-column align-items-center">
+                    <img class="img-fluid custom-size" src="img/collage.png" alt="Collage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Independence Section -->
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="independence">
+        <div class="container about px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 ps-lg-0 d-flex flex-column align-items-center justify-content-center">
+                    <img class="img-fluid custom-size" src="img/collage2.png" alt="Hall">
+                </div>
+                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 pe-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">Independence</h1>
+                        </div>
+                        <p class="mb-4 pb-2">When Cooper Union accepted me during the regular decision period, I was ecstatic. I knew I had to seize the opportunity and set aside my fears about the challenges of mechanical engineering. From that moment on, I never looked back. Living in NYC has been an incredible experience, and The Cooper Union has been the perfect fit for me. The heavy emphasis on projects and intimate setting, with classes of fewer than 30 students, offers plenty of face time with professors, fostering strong personal relationships and the sense of applying theory to hands-on work.</p>
+                        <p class="mb-4 pb-2">Although the campus consists of just two buildings and lacks extensive facilities, it has the entire “city as its backyard” as it boasts. I threw myself into exploring NYC and all it has to offer. The limiting factor that held me back was balancing my social life with academics, as the typical 18-21 credit semester didn’t leave much free time. However, I promised myself I wouldn't let time pass without experiencing my surroundings and so I made it a point to say yes to every opportunity that came my way.</p>
+                        <p class="mb-4 pb-2">To have a full college experience, I squeezed in an internship, which turned out to be one of the best decisions for my professional development. I was very lucky with how welcoming and engaging the Boiler Unit at the Department of Buildings was, immediately making me feel as one of their own. It provided practical experience and valuable insights into my field, complementing the academic knowledge I gained at Cooper Union, while also satisfying my craving to delve into the technical aspects hidden in plain sight: while another person and I might look at the same object, the principles and theories I learned allowed me to see far beyond the surface. I absorbed everything I could, from boilers, elevators, and the intricate web of codes, standards, to legal compliance around any activity. This deep understanding gave me a profound appreciation for the complexities of engineering and its utility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+    </div>
+<!-- Button Section Start -->
+<div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+    <div class="container px-lg-0">
+        <div class="row g-3 mx-lg-0">
+            <div class="col-12 col-md-6">
+                <a href="gallery.html" class="btn btn-orange btn-block py-4 w-100">Browse Gallery Photos</a>
+            </div>
+            <div class="col-12 col-md-6">
+                <a href="project.html" class="btn btn-orange btn-block py-4 w-100">Explore Exciting Projects</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Button Section End -->
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s" style="margin-top: 5rem; padding-top: 5rem;">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Address</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>New York, USA</p>
+                    <p><a href="tel:+16464277255" class="phone-number-link"><i class="fa fa-phone-alt me-3"></i>+6464277255</a></p>
+                    <p><a href="mailto:petros.sklavounos@cooper.edu" class="email-link"><i class="fa fa-envelope me-3"></i><small>petros.sklavounos@cooper.edu</small></a></p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/peter7542/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/petros-sklavounos-b2b726231/?trk=public_profile_browsemap"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <h5 class="text-white mb-4">Contact Me</h5>
+                    <form action="https://formspree.io/f/xzbnapeq" method="POST">
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" placeholder="Leave a message here" name="message" style="height: 150px" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary py-3 w-100">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="text-white" href="#">PetrosSklavounos</a>, All Right Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a class="text-white" href="https://htmlcodex.com">HTML Codex</a> and Petros Sklavounos
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var docHeight = document.body.offsetHeight;
+            var windowHeight = window.innerHeight;
+            var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            var scrollPercent = scrollPosition / (docHeight - windowHeight);
+            var scrollPercentRounded = Math.round(scrollPercent * 100);
+
+            // Update the background of the progress indicator
+            var progressIndicator = document.getElementById('progress-indicator');
+            progressIndicator.style.background = 'linear-gradient(to top, #ab7b4c ' + scrollPercentRounded + '%, transparent ' + scrollPercentRounded + '%)';
+        });
+
+        // Smooth scroll to top
+        document.getElementById('progress-indicator').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <a href="#" class="progress-indicator" id="progress-indicator" title="Scroll to top">
+        <span id="progress-arrow">&#x2191;</span>
+    </a>
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+    </script>
+    <!-- Place this before the closing </body> tag -->
+    <script>
+        // Function to update the TOC with active states
+        window.addEventListener('scroll', function() {
+            var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+            document.querySelectorAll('#toc a').forEach(function(link) {
+                var section = document.querySelector(link.hash);
+                if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
+                    document.querySelectorAll('#toc a').forEach(function(link) {
+                        link.classList.remove('active');
+                    });
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        // Optional: smooth scrolling for TOC links
+        document.querySelectorAll('#toc a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+    <script>
+        // Variables to determine scroll state
+        var isScrolling;
+        var toc = document.getElementById("toc-container");
+
+        // Show the TOC when scrolling starts
+        window.addEventListener('scroll', function (event) {
+            window.clearTimeout(isScrolling);
+            toc.style.display = 'block'; // Show the TOC
+
+            // Hide the TOC when scrolling stops
+            isScrolling = setTimeout(function() {
+                toc.style.display = 'none'; // Hide the TOC after a delay
+            }, 1500); // Adjust the time delay as needed
+
+            // Your existing code for active state can remain here
+        }, false);
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+            });
+        });
+    </script>
+</body>
+
+</html>
